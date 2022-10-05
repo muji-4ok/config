@@ -499,3 +499,10 @@ set mouse=a
 set relativenumber
 set number
 
+map <F2> :Lexplore<cr>
+
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 20
+let g:netrw_liststyle = 3
+
