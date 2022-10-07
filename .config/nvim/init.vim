@@ -399,6 +399,7 @@ Plug 'doums/darcula'
 Plug 'airblade/vim-gitgutter'
 Plug 'milkypostman/vim-togglelist'
 Plug 'mhinz/vim-grepper'
+Plug 'whatyouhide/vim-lengthmatters'
 
 " plenary needed for telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -476,4 +477,7 @@ let g:grepper.operator.stop = 5000
 
 nnoremap <C-s> <cmd>Grepper -tool grep -stop 5000<cr>
 xmap <C-s> <plug>(GrepperOperator)
+
+" lengthmatters
+let g:lengthmatters_use_textwidth=0
 
