@@ -480,4 +480,5 @@ xmap <C-s> <plug>(GrepperOperator)
 
 " lengthmatters
 let g:lengthmatters_use_textwidth=0
+let g:lengthmatters_on_by_default=0
 
