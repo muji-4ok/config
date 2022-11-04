@@ -394,14 +394,12 @@ endfunction
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin(stdpath('data') . '/plugged')
 
+" plenary needed for telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 Plug 'tomtom/tcomment_vim'
 Plug 'doums/darcula'
-Plug 'ARM9/arm-syntax-vim'
-Plug 'shirk/vim-gas'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Make sure you use single quotes
@@ -440,13 +438,13 @@ call plug#end()
 colorscheme darcula
 
 lua << EOF
-local actions = require("telescope.actions")
+local telescope_actions = require("telescope.actions")
 
 require("telescope").setup {
   defaults = {
     mappings = {
       i = {
-        ["<esc>"] = actions.close
+        ["<esc>"] = telescope_actions.close
       }
     },
     vimgrep_arguments = {
@@ -461,7 +459,7 @@ require("telescope").setup {
   }
 }
 
-function vim.getVisualSelection()
+function getVisualSelection()
 	vim.cmd('noau normal! "vy"')
 	local text = vim.fn.getreg('v')
 	vim.fn.setreg('v', {})
@@ -474,33 +472,56 @@ function vim.getVisualSelection()
 	end
 end
 
+local telescope_builtin = require('telescope.builtin')
+local telescope_state = require("telescope.state")
 
-local keymap = vim.keymap.set
-local tb = require('telescope.builtin')
+function search_with_selection()
+	local text = getVisualSelection()
+	telescope_builtin.live_grep({ default_text = text })
+end
+
 local opts = { noremap = true, silent = true }
 
-keymap('v', '<C-s>', function()
-	local text = vim.getVisualSelection()
-	tb.live_grep({ default_text = text })
-end, opts)
+vim.keymap.set('v', '<C-s>', search_with_selection, opts)
+
+
+local last_search = nil
+
+function search_with_cache()
+  if last_search == nil then
+    telescope_builtin.live_grep()
+
+    local cached_pickers = telescope_state.get_global_key "cached_pickers" or {}
+    last_search = cached_pickers[1]
+  else
+    telescope_builtin.resume({ picker = last_search })
+  end
+end
+
+vim.keymap.set('n', '<C-s>', search_with_cache)
+
 EOF
 
 
 " Find files using Telescope command-line sugar.
 nnoremap <C-p> <cmd>Telescope find_files<cr>
-nnoremap <C-s> <cmd>Telescope live_grep<cr>
+" nnoremap <C-s> <cmd>Telescope live_grep<cr>
 nnoremap <C-g> <cmd>Telescope buffers<cr>
 
+" Disable annoying mappings
 let g:gitgutter_map_keys = 0
 
+" So gitgutter updates quicker
 set updatetime=100
 
 set mouse=a
 set relativenumber
 set number
 
+" Easy to use file explorer
 map <F2> :Lexplore<cr>
 
+" Making netrw look good
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 20
