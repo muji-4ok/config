@@ -73,8 +73,8 @@ set ruler
 " Height of the command bar
 set cmdheight=1
 
-" A buffer becomes hidden when it is abandoned
-set hid
+" Removes all annoying [No Name] buffers
+set nohidden
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -394,13 +394,11 @@ endfunction
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin(stdpath('data') . '/plugged')
 
-" plenary needed for telescope
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-
 Plug 'tomtom/tcomment_vim'
 Plug 'doums/darcula'
 Plug 'airblade/vim-gitgutter'
+Plug 'milkypostman/vim-togglelist'
+Plug 'mhinz/vim-grepper'
 
 " Make sure you use single quotes
 
@@ -437,77 +435,6 @@ call plug#end()
 
 colorscheme darcula
 
-lua << EOF
-local telescope_actions = require("telescope.actions")
-
-require("telescope").setup {
-  defaults = {
-    mappings = {
-      i = {
-        ["<esc>"] = telescope_actions.close
-      }
-    },
-    vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--case-sensitive",
-    }
-  }
-}
-
-function getVisualSelection()
-	vim.cmd('noau normal! "vy"')
-	local text = vim.fn.getreg('v')
-	vim.fn.setreg('v', {})
-
-	text = string.gsub(text, "\n", "")
-	if #text > 0 then
-		return text
-	else
-		return ''
-	end
-end
-
-local telescope_builtin = require('telescope.builtin')
-local telescope_state = require("telescope.state")
-
-function search_with_selection()
-	local text = getVisualSelection()
-	telescope_builtin.live_grep({ default_text = text })
-end
-
-local opts = { noremap = true, silent = true }
-
-vim.keymap.set('v', '<C-s>', search_with_selection, opts)
-
-
-local last_search = nil
-
-function search_with_cache()
-  if last_search == nil then
-    telescope_builtin.live_grep()
-
-    local cached_pickers = telescope_state.get_global_key "cached_pickers" or {}
-    last_search = cached_pickers[1]
-  else
-    telescope_builtin.resume({ picker = last_search })
-  end
-end
-
-vim.keymap.set('n', '<C-s>', search_with_cache)
-
-EOF
-
-
-" Find files using Telescope command-line sugar.
-nnoremap <C-p> <cmd>Telescope find_files<cr>
-" nnoremap <C-s> <cmd>Telescope live_grep<cr>
-nnoremap <C-g> <cmd>Telescope buffers<cr>
-
 " Disable annoying mappings
 let g:gitgutter_map_keys = 0
 
@@ -519,11 +446,25 @@ set relativenumber
 set number
 
 " Easy to use file explorer
-map <F2> :Lexplore<cr>
+map <M-1> :Lexplore<cr>
 
 " Making netrw look good
 let g:netrw_banner = 0
-let g:netrw_browse_split = 4
+let g:netrw_browse_split = 0
 let g:netrw_winsize = 20
 let g:netrw_liststyle = 3
+
+" Make my own mapping
+let g:toggle_list_no_mappings = 1
+map <M-2> :call ToggleQuickfixList()<cr>
+
+" Grepper
+let g:grepper = {}
+runtime plugin/grepper.vim
+
+let g:grepper.prompt_quote = 1
+let g:grepper.operator.stop = 5000
+
+nnoremap <C-s> <cmd>Grepper -tool grep -stop 5000<cr>
+xmap gs <plug>(GrepperOperator)
 
