@@ -400,6 +400,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'milkypostman/vim-togglelist'
 Plug 'mhinz/vim-grepper'
 
+" plenary needed for telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
 " Make sure you use single quotes
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
@@ -435,6 +439,10 @@ call plug#end()
 
 colorscheme darcula
 
+" Telescope only use
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <C-g> <cmd>Telescope buffers<cr>
+
 " Disable annoying mappings
 let g:gitgutter_map_keys = 0
 
@@ -463,8 +471,9 @@ let g:grepper = {}
 runtime plugin/grepper.vim
 
 let g:grepper.prompt_quote = 1
+
 let g:grepper.operator.stop = 5000
 
 nnoremap <C-s> <cmd>Grepper -tool grep -stop 5000<cr>
-xmap gs <plug>(GrepperOperator)
+xmap <C-s> <plug>(GrepperOperator)
 
