@@ -407,6 +407,8 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 Plug 'nanozuki/tabby.nvim'
 
+Plug 'kevinhwang91/nvim-bqf'
+
 " Make sure you use single quotes
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
@@ -466,8 +468,16 @@ let g:netrw_winsize = 20
 let g:netrw_liststyle = 3
 
 " Make my own mapping
+function! ToggleQuickfixAndSwitchToIt()
+    call ToggleQuickfixList()
+    execute("wincmd j")
+    execute("wincmd j")
+    execute("wincmd j")
+    execute("wincmd j")
+endfunction 
+
 let g:toggle_list_no_mappings = 1
-map <M-2> :call ToggleQuickfixList()<cr>
+map <M-2> :call ToggleQuickfixAndSwitchToIt()<cr>
 
 " Grepper
 let g:grepper = {}
