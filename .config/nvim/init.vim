@@ -455,7 +455,6 @@ let g:gitgutter_map_keys = 0
 set updatetime=100
 
 set mouse=a
-set relativenumber
 set number
 
 " Easy to use file explorer
