@@ -12,6 +12,8 @@ mkdir -p ~/.config/git
 ln -sf $(realpath .config/git/ignore) ~/.config/git/ignore
 
 echo "Install neovim version >= 0.7!"
+echo "Install vim-plug - https://github.com/junegunn/vim-plug#unix-linux !"
+echo "Run :PlugInstall"
 
 git config --global core.excludesfile ~/.config/git/ignore
 git config --global diff.tool nvimdiff
