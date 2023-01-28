@@ -405,6 +405,8 @@ Plug 'whatyouhide/vim-lengthmatters'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
+Plug 'nanozuki/tabby.nvim'
+
 " Make sure you use single quotes
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
