@@ -11,12 +11,14 @@ ln -sf $(realpath .config/nvim/init.vim) ~/.config/nvim/init.vim
 mkdir -p ~/.config/git
 ln -sf $(realpath .config/git/ignore) ~/.config/git/ignore
 
-echo "Install tmux"
-echo "Install neovim version >= 0.7"
-echo "Add 'alias vim=nvim' to .bashrc"
-echo "Add 'export EDITOR=nvim' to .bashrc"
-echo "Install vim-plug - https://github.com/junegunn/vim-plug#unix-linux"
-echo "Run :PlugInstall"
+echo "Run the steps below manually:\n"
+echo ""
+echo "1. Install tmux"
+echo "2. Install neovim version >= 0.7"
+echo "3. Add 'alias vim=nvim' to .bashrc"
+echo "4. Add 'export EDITOR=nvim' to .bashrc"
+echo "5. Install vim-plug - https://github.com/junegunn/vim-plug#unix-linux"
+echo "6. Run :PlugInstall"
 
 git config --global core.excludesfile ~/.config/git/ignore
 git config --global diff.tool nvimdiff
