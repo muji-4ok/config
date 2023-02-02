@@ -5,8 +5,9 @@ ln -sf $(realpath .vimrc) ~/.vimrc
 ln -sf $(realpath .tmux.conf) ~/.tmux.conf
 ln -sf $(realpath .tmux.conf.local) ~/.tmux.conf.local
 
-mkdir -p ~/.config/nvim
+mkdir -p ~/.config/nvim/lua
 ln -sf $(realpath .config/nvim/init.vim) ~/.config/nvim/init.vim
+ln -sf $(realpath .config/nvim/lua/config.lua) ~/.config/nvim/lua/config.lua
 
 mkdir -p ~/.config/git
 ln -sf $(realpath .config/git/ignore) ~/.config/git/ignore

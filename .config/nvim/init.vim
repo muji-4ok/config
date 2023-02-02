@@ -449,6 +449,7 @@ colorscheme darcula
 " Telescope only use
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <C-g> <cmd>Telescope buffers<cr>
+luafile ~/.config/nvim/lua/config.lua
 
 " Disable annoying mappings
 let g:gitgutter_map_keys = 0
