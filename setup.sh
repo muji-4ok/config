@@ -11,7 +11,7 @@ ln -sf $(realpath .config/nvim/init.vim) ~/.config/nvim/init.vim
 mkdir -p ~/.config/git
 ln -sf $(realpath .config/git/ignore) ~/.config/git/ignore
 
-echo "Run the steps below manually:\n"
+echo "Run the steps below manually:"
 echo ""
 echo "1. Install tmux"
 echo "2. Install neovim version >= 0.7"
