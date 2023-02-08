@@ -130,12 +130,6 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-" Moved down
-" try
-"     colorscheme darcula
-" catch
-" endtry
-
 set termguicolors
 set background=dark
 
