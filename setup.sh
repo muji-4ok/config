@@ -22,6 +22,7 @@ echo "5. Install vim-plug - https://github.com/junegunn/vim-plug#unix-linux"
 echo "6. Run :PlugInstall"
 
 git config --global core.excludesfile ~/.config/git/ignore
+git config --global credential.helper store
 git config --global diff.tool nvimdiff
 git config --global alias.ff 'pull --ff-only'
 
