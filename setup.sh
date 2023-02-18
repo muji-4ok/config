@@ -2,6 +2,7 @@
 
 ln -sf $(realpath .inputrc) ~/.inputrc
 ln -sf $(realpath .vimrc) ~/.vimrc
+ln -sf $(realpath .vimrc) ~/.ideavimrc
 ln -sf $(realpath .tmux.conf) ~/.tmux.conf
 ln -sf $(realpath .tmux.conf.local) ~/.tmux.conf.local
 
@@ -25,6 +26,6 @@ git config --global core.excludesfile ~/.config/git/ignore
 git config --global credential.helper store
 git config --global diff.tool nvimdiff
 git config --global safe.directory '*'
-git config --global core.editor vim
+git config --global core.editor nvim
 git config --global alias.ff 'pull --ff-only'
 

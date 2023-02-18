@@ -71,10 +71,10 @@ endif
 set ruler
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
-" A buffer becomes hidden when it is abandoned
-set hid
+" Removes all annoying [No Name] buffers
+set nohidden
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -130,11 +130,7 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme desert
-catch
-endtry
-
+set termguicolors
 set background=dark
 
 " Set extra options when running in GUI mode
@@ -246,7 +242,9 @@ au TabLeave * let g:lasttab = tabpagenr()
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
 " Switch CWD to the directory of the open buffer
-" map <leader>cd :cd %:p:h<cr>:pwd<cr>
+map <leader>d :cd %:p:h<cr>:pwd<cr>
+" Move up
+map <leader>u :cd ..<cr>:pwd<cr>
 
 " Specify the behavior when switching between buffers 
 try
@@ -386,8 +384,34 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+colorscheme desert
+
 set mouse=a
-set relativenumber
 set number
 
-map <F2> :Lexplore<cr>
+" Easy to use file explorer
+map <M-1> :Lexplore<cr>
+
+" Making netrw look good
+let g:netrw_banner = 0
+let g:netrw_browse_split = 0
+let g:netrw_winsize = 20
+let g:netrw_liststyle = 3
+
+" Make my own mapping
+function! ToggleQuickfixAndSwitchToIt()
+    call ToggleQuickfixList()
+    execute("wincmd j")
+    execute("wincmd j")
+    execute("wincmd j")
+    execute("wincmd j")
+endfunction
+
+let g:toggle_list_no_mappings = 1
+map <M-2> :call ToggleQuickfixAndSwitchToIt()<cr>
+
+" For intellij
+if has('ide')
+    set ideajoin
+endif
