@@ -3,6 +3,7 @@
 ln -sf $(realpath .inputrc) ~/.inputrc
 ln -sf $(realpath .vimrc) ~/.vimrc
 ln -sf $(realpath .vimrc) ~/.ideavimrc
+ln -sf $(realpath .vimrc) ~/.vscodevimrc
 ln -sf $(realpath .tmux.conf) ~/.tmux.conf
 ln -sf $(realpath .tmux.conf.local) ~/.tmux.conf.local
 
