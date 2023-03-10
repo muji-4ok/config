@@ -479,7 +479,7 @@ map <M-2> :call ToggleQuickfixAndSwitchToIt()<cr>
 let g:grepper = {}
 runtime plugin/grepper.vim
 
-let g:grepper.prompt_quote = 1
+" let g:grepper.prompt_quote = 1
 
 let g:grepper.operator.stop = 5000
 
