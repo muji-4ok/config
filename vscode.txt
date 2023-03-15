@@ -1,0 +1,15 @@
+Extensions:
+* C/C++ Extension pack
+* Python
+* Remote SSH
+* Vim
+* (Optional) WSL
+* Gitlens
+
+Settings:
+* Change all keyboard shortcuts related to formatting to `ALT+SHIFT+L`
+* Enable auto save on delay, set delay to 500
+* Disable cmake configure on edit
+* Set cmake copy compile commands to `${workspaceFolder}/compile_commands.json`
+* Set `compileCommands` in `.vscode/c_cpp_properties.json` to the same value
+
