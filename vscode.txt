@@ -12,4 +12,6 @@ Settings:
 * Disable cmake configure on edit
 * Set cmake copy compile commands to `${workspaceFolder}/compile_commands.json`
 * Set `compileCommands` in `.vscode/c_cpp_properties.json` to the same value
+* Disable minimap
+* Enable adding final newline on file save
 
