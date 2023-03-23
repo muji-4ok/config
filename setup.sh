@@ -29,4 +29,5 @@ git config --global diff.tool nvimdiff
 git config --global safe.directory '*'
 git config --global core.editor nvim
 git config --global alias.ff 'pull --ff-only'
+git config --global alias.continue 'rebase --continue'
 
