@@ -30,4 +30,10 @@ git config --global safe.directory '*'
 git config --global core.editor nvim
 git config --global alias.ff 'pull --ff-only'
 git config --global alias.continue 'rebase --continue'
+git config --global alias.amend 'commit --amend'
+git config --global alias.spush 'stash push'
+git config --global alias.spop 'stash pop'
+git config --global alias.sshow 'stash show'
+git config --global alias.slist 'stash list --stat'
+git config --global alias.s 'status'
 
