@@ -16,4 +16,7 @@ Settings:
 * Enable adding final newline on file save
 * Enable vimrc
 * Remove `CTRL+V` for pasting in terminal
+* Set vim leader to ","
+* Enable vim Hlsearch
+* Enable vim visualstar
 
