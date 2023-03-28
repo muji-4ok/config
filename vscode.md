@@ -27,4 +27,6 @@ Settings:
 * Set `CTRL+;` to toggle panel visibility and to focus into panel. Also set when conditions to respectively `panelFocus` and `!panelFocus`
 * Remove focus into primary side bar
 * Set `CTRL+0` to toggle primary side bar
+* Set `"statusBar.background": "#40413b"` in color customization
+* Set open prev/next editor to `CTRL+(H/L)`. Remove previous actions with these keybinds
 
