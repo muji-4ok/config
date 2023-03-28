@@ -19,4 +19,12 @@ Settings:
 * Set vim leader to ","
 * Enable vim Hlsearch
 * Enable vim visualstar
+* Disable workbench editor preview
+* Add `CTRL+ALT+(H/L)` keybindings to move editor to left/right group
+* Disable menubar
+* Install darcula theme
+* Move gitlens commits, file history, search, staches to bottom panel
+* Set `CTRL+;` to toggle panel visibility and to focus into panel. Also set when conditions to respectively `panelFocus` and `!panelFocus`
+* Remove focus into primary side bar
+* Set `CTRL+0` to toggle primary side bar
 
