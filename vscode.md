@@ -24,9 +24,7 @@ Settings:
 * Disable menubar
 * Install darcula theme
 * Move gitlens commits, file history, search, staches to bottom panel
-* Set `CTRL+9` to toggle panel visibility and to focus into panel.
-Also set when conditions to respectively `panelFocus` and `!panelFocus`.
-Remove previous action
+* Set `CTRL+9` to toggle panel visibility. Remove previous action
 * Remove focus into primary side bar
 * Set `CTRL+0` to toggle primary side bar
 * Set `"statusBar.background": "#40413b"` in color customization
