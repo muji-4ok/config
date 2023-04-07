@@ -31,4 +31,5 @@ Settings:
 * Set open prev/next editor to `CTRL+(H/L)`. Remove previous actions with these keybinds
 * Set `CTRL+;` to toggle editor group sizes. Remove all previous actions
 * Remove vim `CTRL+W` keybind
+* Enable smart case search
 
