@@ -37,4 +37,5 @@ git config --global alias.sshow 'stash show'
 git config --global alias.sapply 'stash apply'
 git config --global alias.slist 'stash list --stat'
 git config --global alias.s 'status'
+git config --global alias.pull-pr '!f() { git fetch origin pull/$1/head:pr-$1; }; f'
 
