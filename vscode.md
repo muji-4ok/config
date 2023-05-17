@@ -5,6 +5,7 @@ Extensions:
 * Vim
 * (Optional) WSL
 * Gitlens
+* Bookmarks
 
 Settings:
 * Change all keyboard shortcuts related to formatting to `ALT+SHIFT+L`
