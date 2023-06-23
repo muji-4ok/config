@@ -1,0 +1,27 @@
+{
+    "settingsSync.ignoredExtensions": [],
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "files.insertFinalNewline": true,
+    "vim.vimrc.enable": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "go.coverOnTestPackage": false,
+    "workbench.startupEditor": "none",
+    "vim.hlsearch": true,
+    "vim.leader": ",",
+    "vim.visualstar": true,
+    "cmake.configureOnOpen": false,
+    "workbench.editor.enablePreview": false,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#40413b",
+        "statusBar.noFolderBackground": "#007acc",
+        "statusBar.debuggingBackground": "#007acc",
+    },
+    "workbench.colorTheme": "Darcula",
+    "editor.minimap.enabled": false,
+    "window.menuBarVisibility": "toggle",
+    "search.smartCase": true,
+    "cmake.configureOnEdit": false
+}

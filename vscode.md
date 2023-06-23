@@ -34,3 +34,5 @@ Settings:
 * Remove vim `CTRL+W` keybind
 * Enable smart case search
 
+Or alternatively, copy contents of `vscode_configs` into `~/.config/Code/User`
+
