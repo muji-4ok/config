@@ -23,11 +23,19 @@ echo "4. Add 'export EDITOR=nvim' to .bashrc"
 echo "5. Install vim-plug - https://github.com/junegunn/vim-plug#unix-linux"
 echo "6. Run :PlugInstall"
 
+if [ -x "$(command -v nvim)" ]; then
+    VIM=nvim
+    VIMDIFF=nvimdiff
+else
+    VIM=vim
+    VIMDIFF=vimdiff
+fi
+
 git config --global core.excludesfile ~/.config/git/ignore
 git config --global credential.helper store
-git config --global diff.tool nvimdiff
+git config --global diff.tool $VIMDIFF
 git config --global safe.directory '*'
-git config --global core.editor nvim
+git config --global core.editor $VIM
 git config --global alias.ff 'pull --ff-only'
 git config --global alias.continue 'rebase --continue'
 git config --global alias.amend 'commit --amend'
