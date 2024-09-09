@@ -22,6 +22,8 @@ echo "3. Add 'alias vim=nvim' to .bashrc"
 echo "4. Add 'export EDITOR=nvim' to .bashrc"
 echo "5. Install vim-plug - https://github.com/junegunn/vim-plug#unix-linux"
 echo "6. Run :PlugInstall"
+echo "7. Install xclip"
+echo "8. Install xsel"
 
 if [ -x "$(command -v nvim)" ]; then
     VIM=nvim
