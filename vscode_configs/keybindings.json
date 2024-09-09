@@ -179,6 +179,14 @@
         "command": "workbench.action.toggleSidebarVisibility"
     },
     {
+      "key": "ctrl+7",
+      "command": "-workbench.action.focusSeventhEditorGroup"
+    },
+    {
+      "key": "ctrl+7",
+      "command": "workbench.action.closeOtherEditors"
+    },
+    {
         "key": "ctrl+b",
         "command": "-workbench.action.toggleSidebarVisibility"
     },

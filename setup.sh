@@ -47,4 +47,5 @@ git config --global alias.slist 'stash list --stat'
 git config --global alias.s 'status'
 git config --global alias.pull-pr '!f() { git fetch origin pull/$1/head:pr-$1; }; f'
 git config --global alias.sdiff 'diff --staged'
-
+git config --global user.email "egorkincbl@gmail.com"
+git config --global user.name "Egor Kutovoi"
