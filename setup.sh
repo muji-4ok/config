@@ -16,14 +16,18 @@ ln -sf $(realpath .config/git/ignore) ~/.config/git/ignore
 
 echo "Run the steps below manually:"
 echo ""
-echo "1. Install tmux"
-echo "2. Install neovim version >= 0.7"
-echo "3. Add 'alias vim=nvim' to .bashrc"
-echo "4. Add 'export EDITOR=nvim' to .bashrc"
-echo "5. Install vim-plug - https://github.com/junegunn/vim-plug#unix-linux"
-echo "6. Run :PlugInstall"
-echo "7. Install xclip"
-echo "8. Install xsel"
+echo "1.  Install tmux"
+echo "2.  Install neovim version >= 0.7 ('nvim' snap in ubuntu >=22.04)"
+echo "3.  Add 'alias vim=nvim' to .bashrc"
+echo "4.  Add 'export EDITOR=nvim' to .bashrc"
+echo "5.  Install vim-plug - https://github.com/junegunn/vim-plug#unix-linux"
+echo "6.  Run :PlugInstall"
+echo "7.  Install xclip"
+echo "8.  Install xsel"
+echo "9.  Install sublime-text (snap in ubuntu >=22.04)"
+echo "10. Install telegram-desktop (snap in ubuntu >=22.04)"
+echo "11. Install vscode ('code' snap in ubuntu >=22.04)"
+echo "12. Read vscode.md"
 
 if [ -x "$(command -v nvim)" ]; then
     VIM=nvim
