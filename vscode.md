@@ -6,6 +6,11 @@ Extensions:
 * (Optional) WSL
 * Gitlens
 * Bookmarks
+* autopep8
+* Darcula Theme
+* Go
+* Makefile Tools
+* rust-analyzer
 
 Settings:
 * Change all keyboard shortcuts related to formatting to `ALT+SHIFT+L`
