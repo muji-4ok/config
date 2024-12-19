@@ -38,6 +38,7 @@ Settings:
 * Set `CTRL+;` to toggle editor group sizes. Remove all previous actions
 * Remove vim `CTRL+W` keybind
 * Enable smart case search
+* Remove `CTRL+P` vim keybind
 
 Or alternatively, copy contents of `vscode_configs` into `~/.config/Code/User`
 
